@@ -36,12 +36,3 @@ The released subset is therefore sufficient to illustrate the data-processing
 pipeline and to validate the proposed approach. Researchers interested in the
 full corpus for research collaboration are welcome to contact the corresponding
 author.
-
-## Citation
-
-If you use this repository or the data in your research, please cite the
-manuscript:
-
-> Wenqiang Zhang, Jinpeng Cui, Miaoqi Zhang, Meng Zhao, Yashuang Mu, Peng Li.
-> Meridian topology-aware graph-language alignment for acupuncture prescription
-> generation. Submitted to *Neurocomputing*.

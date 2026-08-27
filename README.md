@@ -20,7 +20,7 @@ of the experimental results reported in the manuscript.
 
 As stated in the Data Availability section of the manuscript, only a
 representative de-identified subset of several hundred case records is released
-here; the full training corpus of more than 20,000 case records is **not**
+here; the full training corpus of more than 20k case records is **not**
 included in this release.
 
 The complete corpus was compiled from classical acupuncture texts, modern TCM

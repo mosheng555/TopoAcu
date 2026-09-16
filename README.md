@@ -17,7 +17,7 @@ TopoAcu decouples acupoint entity semantics from meridian-relation topology alig
 
 ## Repository Content
 
-data/data.jsonl — De-identified acupuncture case records in JSONL format (one JSON object per line). Each record includes the case id, source document, demographic descriptor (age, sex), chief complaint, medical history, four-diagnostic information (symptoms, tongue, pulse, etc.), syndrome differentiation, treatment principle, acupuncture prescription (main/adjunct points, needling details, and normalized acupoint names), outcome description, and the corresponding topo-cot reasoning trace.
+data_case.jsonl — De-identified acupuncture case records in JSONL format (one JSON object per line). Each record includes the case id, source document, demographic descriptor (age, sex), chief complaint, medical history, four-diagnostic information (symptoms, tongue, pulse, etc.), syndrome differentiation, treatment principle, acupuncture prescription (main/adjunct points, needling details, and normalized acupoint names), outcome description, and the corresponding topo-cot reasoning trace.
 
 ## Data Availability
 

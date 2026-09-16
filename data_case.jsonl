@@ -1,0 +1,222 @@
+[
+  {
+    "case_id": "ACU-CASE-001",
+    "source_document": "Acupuncture and Moxibustion Science (10th Ed.) & Clinical Records",
+    "demographic_descriptor": {"age": 42, "sex": "Male"},
+    "chief_complaint": "胃脘部隐痛伴泛酸、腹胀2周",
+    "medical_history": "患者平素饮食不节，劳累后胃脘隐痛，喜温喜按，食后腹胀，偶有泛酸",
+    "four_diagnostic_information": {
+      "symptoms": ["胃脘隐痛", "泛酸", "腹胀", "食欲不振", "神疲乏力"],
+      "tongue": "舌淡红，苔薄白",
+      "pulse": "脉沉细弱"
+    },
+    "syndrome_differentiation": "脾胃虚寒证",
+    "treatment_principle": "健脾益气，和胃止痛",
+    "acupuncture_prescription": {
+      "main_points": ["中脘 (CV12)", "足三里 (ST36)"],
+      "adjunct_points": ["内关 (PC6)", "公孙 (SP4)", "脾俞 (BL20)"],
+      "needling_details": "CV12直刺0.8-1.2寸，平补平泻；ST36直刺1-1.5寸，补法；辅以温针灸",
+      "normalized_acupoint_names": ["CV12", "ST36", "PC6", "SP4", "BL20"]
+    },
+    "outcome_description": "连续治疗5次后胃脘疼痛基本缓解，纳食好转，腹胀泛酸消失",
+    "topo_cot_reasoning_trace": "Input Symptoms [胃脘痛, 泛酸, 腹胀] -> Sub-graph Retrieval [ST36, CV12, PC6, SP4] -> Rule Base Constraint: 遵循标本兼治与八脉交会穴八穴配伍（PC6+SP4合治心胸胃脘疾患） -> Safety Verification: 严格限制CV12进针深度（防刺伤内脏） -> Generated Prescription"
+  },
+  {
+    "case_id": "ACU-CASE-002",
+    "source_document": "Standardized Clinical Case Registry for Acupuncture",
+    "demographic_descriptor": {"age": 35, "sex": "Female"},
+    "chief_complaint": "入睡困难伴心悸、多梦1个月",
+    "medical_history": "近1月工作压力大，夜寐难安，每夜仅睡3-4小时，醒后难以再睡，伴头昏健忘",
+    "four_diagnostic_information": {
+      "symptoms": ["失眠", "心悸", "多梦易醒", "头晕健忘", "面色萎黄"],
+      "tongue": "舌淡白，苔少",
+      "pulse": "脉细弱"
+    },
+    "syndrome_differentiation": "心脾两虚型不寐",
+    "treatment_principle": "补益心脾，养血安神",
+    "acupuncture_prescription": {
+      "main_points": ["神门 (HT7)", "三阴交 (SP6)", "百会 (GV20)"],
+      "adjunct_points": ["心俞 (BL15)", "脾俞 (BL20)", "安眠 (EX-HN16)"],
+      "needling_details": "HT7直刺0.3-0.5寸，补法；SP6直刺1-1.5寸，提插捻转补法；GV20平刺0.5-0.8寸",
+      "normalized_acupoint_names": ["HT7", "SP6", "GV20", "BL15", "BL20", "EX-HN16"]
+    },
+    "outcome_description": "治疗6次后入睡时间缩短至30分钟以内，心悸减轻，多梦好转",
+    "topo_cot_reasoning_trace": "Input Symptoms [失眠, 心悸, 多梦] -> Meridian Mapping [Heart Meridian, Spleen Meridian, Du Vessel] -> Node Selection [HT7 (原穴), SP6 (足三阴交会)] -> Abductive Reasoning: 逆向推演辨证为心脾血虚 -> Compatibility Optimization: 协同安眠穴调宁心神"
+  },
+  {
+    "case_id": "ACU-CASE-003",
+    "source_document": "Modern Clinical Acupuncture Reports",
+    "demographic_descriptor": {"age": 48, "sex": "Male"},
+    "chief_complaint": "双侧额颞部搏动性胀痛3天，情绪波动时加重",
+    "medical_history": "近期常因情绪急躁诱发偏头痛，伴口苦咽干、面红目赤、烦躁易怒",
+    "four_diagnostic_information": {
+      "symptoms": ["偏头痛", "面红目赤", "口苦咽干", "急躁易怒", "目眩"],
+      "tongue": "舌红，苔薄黄",
+      "pulse": "脉弦数有力"
+    },
+    "syndrome_differentiation": "肝阳上亢型头痛",
+    "treatment_principle": "平肝潜阳，清利头目",
+    "acupuncture_prescription": {
+      "main_points": ["风池 (GB20)", "太冲 (LR3)", "太溪 (KI3)"],
+      "adjunct_points": ["太阳 (EX-HN5)", "头临泣 (GB15)", "侠溪 (GB43)"],
+      "needling_details": "GB20向对侧鼻尖斜刺0.8-1.2寸，施泻法；LR3直刺0.5-0.8寸，泻法；KI3补法",
+      "normalized_acupoint_names": ["GB20", "LR3", "KI3", "EX-HN5", "GB15", "GB43"]
+    },
+    "outcome_description": "留针30分钟内头痛明显钝化，治疗3次后头痛未再发作",
+    "topo_cot_reasoning_trace": "Initial Symptoms [偏头痛, 易怒] -> Abductive Query: 探查是否伴眩晕口苦 -> Multi-Feature Intent: ROUTE=DIAGNOSIS_TREATMENT -> Topological Path [GB Meridian - LR Meridian] -> Selection of Yuan-Source & Shu-Stream Points (LR3, KI3 滋水涵木) -> Verified by Rule Base"
+  },
+  {
+    "case_id": "ACU-CASE-004",
+    "source_document": "Hospital Neurological Rehabilitation Center",
+    "demographic_descriptor": {"age": 29, "sex": "Female"},
+    "chief_complaint": "左侧口角歪斜、闭目露睛2天",
+    "medical_history": "发病前晚吹风着凉，晨起漱口漏水，左侧额纹消失，无法蹙额鼓腮",
+    "four_diagnostic_information": {
+      "symptoms": ["面部歪斜", "眼睑闭合不全", "迎风流泪", "面瘫侧耳后微痛"],
+      "tongue": "舌淡红，苔薄白",
+      "pulse": "脉浮紧"
+    },
+    "syndrome_differentiation": "风寒袭络型面瘫（贝尔麻痹初起）",
+    "treatment_principle": "疏风散寒，通经活络",
+    "acupuncture_prescription": {
+      "main_points": ["翳风 (TE17)", "地仓 (ST4)", "颊车 (ST6)", "合谷 (LI4)"],
+      "adjunct_points": ["阳白 (GB14)", "攒竹 (BL2)", "太冲 (LR3)"],
+      "needling_details": "面部穴位采用透刺法与浅刺，平补平泻；LI4对侧深刺施泻法；初期宜轻柔",
+      "normalized_acupoint_names": ["TE17", "ST4", "ST6", "LI4", "GB14", "BL2", "LR3"]
+    },
+    "outcome_description": "治疗10天后额纹显现，口角漏水好转，2周后闭眼完全闭合",
+    "topo_cot_reasoning_trace": "Symptom Cluster [口眼㖞斜, 耳后痛] -> AcuKG Target Reasoning: 面口合谷收（远端引经LI4），局部透刺（ST4透ST6） -> Topology Constraint: 遵循手足阳明与手少阳经循行路径 -> Quantitative Compatibility Metric > 0.85"
+  },
+  {
+    "case_id": "ACU-CASE-005",
+    "source_document": "Integrative Rehabilitation Medicine Archive",
+    "demographic_descriptor": {"age": 58, "sex": "Male"},
+    "chief_complaint": "腰骶部刺痛向左下肢后外侧放射3周",
+    "medical_history": "长期久坐劳损，近半月腰部刺痛剧烈，痛处固定拒按，夜间痛甚，直腿抬高试验阳性",
+    "four_diagnostic_information": {
+      "symptoms": ["腰腿刺痛", "痛有定处", "转侧不利", "患肢发凉"],
+      "tongue": "舌质紫暗，边有瘀斑，苔薄白",
+      "pulse": "脉涩"
+    },
+    "syndrome_differentiation": "气滞血瘀型腰痛（坐骨神经痛）",
+    "treatment_principle": "活血化瘀，通经止痛",
+    "acupuncture_prescription": {
+      "main_points": ["大肠俞 (BL25)", "委中 (BL40)", "阿是穴 (Ashi)"],
+      "adjunct_points": ["环跳 (GB30)", "阳陵泉 (GB34)", "膈俞 (BL17)"],
+      "needling_details": "BL40点刺放血3-5滴；GB30用长针深刺2.5-3寸促使下肢触电感感传；BL25施泻法",
+      "normalized_acupoint_names": ["BL25", "BL40", "Ashi", "GB30", "GB34", "BL17"]
+    },
+    "outcome_description": "放血与深刺治疗后下肢酸麻即刻减轻，随访2周VAS评分由8降至2",
+    "topo_cot_reasoning_trace": "Entity Extraction [腰痛, 瘀血, 下肢麻痛] -> Meridian Reasoning: 足太阳膀胱经与足少阳胆经循行受阻 -> Rule Constraint: 腰背委中求（BL40）+ 髓之会/筋之会（GB34） -> Quantitative Indication Weight Calculation -> Optimized Scheme"
+  },
+  {
+    "case_id": "ACU-CASE-006",
+    "source_document": "Standardized Clinical Case Registry for Acupuncture",
+    "demographic_descriptor": {"age": 63, "sex": "Female"},
+    "chief_complaint": "双膝关节酸软隐痛伴活动弹响半年，遇阴雨天加剧",
+    "medical_history": "患膝骨关节炎多年，双膝怕冷，上下楼梯受限，按之濡软喜按，神疲腰酸",
+    "four_diagnostic_information": {
+      "symptoms": ["膝痛喜按", "畏寒怕冷", "腰膝酸软", "活动不利"],
+      "tongue": "舌淡嫩，苔白滑",
+      "pulse": "脉沉细迟"
+    },
+    "syndrome_differentiation": "肝肾亏虚型膝痹",
+    "treatment_principle": "补益肝肾，温经通络",
+    "acupuncture_prescription": {
+      "main_points": ["内膝眼 (EX-LE4)", "犊鼻 (ST35)", "阳陵泉 (GB34)", "梁丘 (ST34)"],
+      "adjunct_points": ["阴陵泉 (SP9)", "血海 (SP10)", "肾俞 (BL23)", "关元 (CV4)"],
+      "needling_details": "膝眼穴向膝内斜刺1-1.5寸，辅以红外温灸或艾灸盒温灸20分钟；BL23用补法",
+      "normalized_acupoint_names": ["EX-LE4", "ST35", "GB34", "ST34", "SP9", "SP10", "BL23", "CV4"]
+    },
+    "outcome_description": "治疗两疗程后膝关节疼痛缓解80%，关节屈伸活动度恢复，能独立下楼梯",
+    "topo_cot_reasoning_trace": "Pathology Mapping [膝部局所疼痛 + 肾虚内因] -> AcuKG Edge Linking: EX-LE4/ST35 (局部穴) + GB34 (筋会) + BL23/CV4 (固本培元) -> Compatibility Topology Evaluation: 兼顾局部通络与远道温补"
+  },
+  {
+    "case_id": "ACU-CASE-007",
+    "source_document": "TCM Gynecology Clinical Evidence Base",
+    "demographic_descriptor": {"age": 24, "sex": "Female"},
+    "chief_complaint": "经前经期小腹冷痛拒按，得热痛减2年",
+    "medical_history": "月经初潮起周期规律，但每逢行经第1-2天小腹绞痛，经色暗紫有血块，四肢厥冷",
+    "four_diagnostic_information": {
+      "symptoms": ["痛经", "经血有块", "小腹冷痛", "恶心呕吐", "手足不温"],
+      "tongue": "舌暗淡，苔白腻",
+      "pulse": "脉沉紧"
+    },
+    "syndrome_differentiation": "寒凝血瘀型痛经",
+    "treatment_principle": "温经散寒，化瘀止痛",
+    "acupuncture_prescription": {
+      "main_points": ["三阴交 (SP6)", "中极 (CV3)", "地机 (SP8)"],
+      "adjunct_points": ["关元 (CV4)", "归来 (ST29)", "次髎 (BL32)"],
+      "needling_details": "SP8施强刺激捻转止痛；CV3、CV4配合隔姜灸；BL32深刺促使酸胀感放射至会阴",
+      "normalized_acupoint_names": ["SP6", "CV3", "SP8", "CV4", "ST29", "BL32"]
+    },
+    "outcome_description": "经前3天开始针灸，当期月经小腹冷痛消失，血块明显减少，未服用镇痛药",
+    "topo_cot_reasoning_trace": "Input [急重痛经, 寒凝证候] -> AcuKG Inference: SP8 (脾经郄穴，专司急痛) + SP6 (妇科总穴) + CV3 (募穴调胞宫) -> Semantic Router Verification: TARGETED_TREATMENT route -> 结合温针灸热力渗透"
+  },
+  {
+    "case_id": "ACU-CASE-008",
+    "source_document": "Acupuncture Emergency and Acute Conditions Textbook",
+    "demographic_descriptor": {"age": 52, "sex": "Female"},
+    "chief_complaint": "大便秘结，排便周期4-5天1次，已持续半年",
+    "medical_history": "大便干结如羊屎，排出极其困难，伴腹胀纳呆、口臭、心烦便后汗出",
+    "four_diagnostic_information": {
+      "symptoms": ["便秘", "大便干结", "腹痛胀满", "口干口臭"],
+      "tongue": "舌红，苔黄燥",
+      "pulse": "脉滑数"
+    },
+    "syndrome_differentiation": "热秘（胃肠实热型秘结）",
+    "treatment_principle": "清热润肠，行气通腑",
+    "acupuncture_prescription": {
+      "main_points": ["天枢 (ST25)", "大肠俞 (BL25)", "支沟 (TE6)"],
+      "adjunct_points": ["照海 (KI6)", "上巨虚 (ST37)", "内庭 (ST44)"],
+      "needling_details": "ST25直刺1-1.5寸，使针感向腹部扩散；TE6、ST37施泻法；KI6施润燥补法",
+      "normalized_acupoint_names": ["ST25", "BL25", "TE6", "KI6", "ST37", "ST44"]
+    },
+    "outcome_description": "首诊针后次日清晨排出软便，连续调理1周排便周期恢复为1日1次",
+    "topo_cot_reasoning_trace": "Symptom Pattern [便秘, 热象] -> Meridian Linkage [Large Intestine Meridian, Triple Energizer] -> Canonical Rule Retrieval: 支沟配照海（养阴润肠通便金准则）+ 大肠募穴天枢与下合穴上巨虚（合募配穴） -> Consistency Checker Passed"
+  },
+  {
+    "case_id": "ACU-CASE-009",
+    "source_document": "Clinical Acupuncture Case Archive",
+    "demographic_descriptor": {"age": 67, "sex": "Male"},
+    "chief_complaint": "右侧肢体活动不利伴语言謇涩2个月（脑梗死恢复期）",
+    "medical_history": "2个月前突发脑梗死经西医救治平稳后遗留右侧偏瘫，右上肢肌力2级，右下肢肌力3级",
+    "four_diagnostic_information": {
+      "symptoms": ["半身不遂", "语言不利", "面瘫口角漏唾", "患侧肢体浮肿"],
+      "tongue": "舌体歪斜，舌质暗紫，苔白腻",
+      "pulse": "脉弦滑"
+    },
+    "syndrome_differentiation": "风痰阻络、气虚血瘀型中风",
+    "treatment_principle": "醒脑开窍，化痰通络",
+    "acupuncture_prescription": {
+      "main_points": ["水沟 (GV26)", "内关 (PC6)", "三阴交 (SP6)", "极泉 (HT1)"],
+      "adjunct_points": ["尺泽 (LU5)", "委中 (BL40)", "廉泉 (CV23)", "足三里 (ST36)"],
+      "needling_details": "PC6提插捻转泻法；GV26雀啄刺以眼球湿润为度；HT1、LU5提插促使上肢抽动3次",
+      "normalized_acupoint_names": ["GV26", "PC6", "SP6", "HT1", "LU5", "BL40", "CV23", "ST36"]
+    },
+    "outcome_description": "规范针刺康复治疗4周后，右上肢肌力提升至4级，能手握水杯，言语清晰度显著提高",
+    "topo_cot_reasoning_trace": "Input Pathologies [中风偏瘫, 神昏语謇] -> Retrieval-Augmented Logic: 激活醒脑开窍经典配穴矩阵 (GV26 + PC6 + SP6) -> Secondary Branching: 补充极泉尺泽促肢体功能重塑 -> Safety Guard: 严格规避深刺大血管区域"
+  },
+  {
+    "case_id": "ACU-CASE-010",
+    "source_document": "Outpatient Acupuncture Clinic Case Base",
+    "demographic_descriptor": {"age": 31, "sex": "Male"},
+    "chief_complaint": "咳嗽声重、咳白色清稀痰伴恶寒无汗4天",
+    "medical_history": "淋雨受凉后突发恶寒发热、鼻塞流清涕，随后出现剧烈咳嗽，胸闷气短，无黄痰",
+    "four_diagnostic_information": {
+      "symptoms": ["外感咳嗽", "恶寒无汗", "痰白清稀", "鼻塞清涕"],
+      "tongue": "舌苔薄白",
+      "pulse": "脉浮紧"
+    },
+    "syndrome_differentiation": "风寒袭肺型咳嗽",
+    "treatment_principle": "疏风散寒，宣肺止咳",
+    "acupuncture_prescription": {
+      "main_points": ["列缺 (LU7)", "合谷 (LI4)", "肺俞 (BL13)"],
+      "adjunct_points": ["风门 (BL12)", "大椎 (GV14)", "尺泽 (LU5)"],
+      "needling_details": "BL13及BL12斜向脊柱刺0.5-0.8寸，起针后配合火罐拔罐5分钟；GV14浅刺或点刺",
+      "normalized_acupoint_names": ["LU7", "LI4", "BL13", "BL12", "GV14", "LU5"]
+    },
+    "outcome_description": "拔罐联合针刺后背部微汗出，恶寒即刻解除，2日后咳喘大减，痰净收工",
+    "topo_cot_reasoning_trace": "Extracted Symptom Entities [咳嗽, 恶风寒, 浮紧脉] -> Meridian Coupling: 肺与大肠相表里 (LU7络穴 + LI4原穴，表里原络配穴法) -> AcuKG Rule Constraint: 背俞穴BL13宣畅肺气，严禁向外直刺以防气胸 -> Final Safe Plan"
+  }
+]
